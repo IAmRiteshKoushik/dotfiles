@@ -20,6 +20,9 @@ return {
       },
     }
   },
+  {
+    "ThePrimeagen/vim-be-good"
+  },
 
   -- change trouble config
   -- {
