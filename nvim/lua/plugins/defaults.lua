@@ -9,7 +9,6 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim" ,
     opts = {
@@ -20,10 +19,6 @@ return {
       },
     }
   },
-  {
-    "ThePrimeagen/vim-be-good"
-  },
-
   -- change trouble config
   -- {
   --   "folke/trouble.nvim",
@@ -33,15 +28,18 @@ return {
 
   -- disable trouble
   -- { "folke/trouble.nvim", enabled = false },
-
-  -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
+    -- opts = function(_, opts)
+      -- table.insert(opts.sources, { name = "emoji" })
+    -- end,
+    opts = {
+      preview = {
+        enabled = false
+      }
+    }
   },
 
   -- change some telescope options and a keymap to browse plugin files
@@ -141,17 +139,18 @@ return {
       },
     },
   },
-
-  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
-  -- would overwrite `ensure_installed` with the new value.
-  -- If you'd rather extend the default config, use the code below instead:
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "tsx",
         "typescript",
+        "sql",
+        "rust",
+        "go",
+        "cpp",
+        "java",
+        "c",
       })
     end,
   },
@@ -165,45 +164,18 @@ return {
     end,
   },
   {
-    "nvim-orgmode/orgmode",
-    event = "VeryLazy",
-    ft = { 'org'},
-    config = function()
-      -- Setup orgmode
-      require("orgmode").setup({
-        org_agenda_files = "~/org/**/*",
-        org_derfault_notes_file = "~/org/refile.org",
-      })
-    end,
+    "folke/noice.nvim",
+    opts = {
+      notify = {
+        enabled = false,
+      },
+    },
   },
-
-  -- or you can return new options to override all the defaults
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   event = "VeryLazy",
-  --   opts = function()
-  --     return {
-  --       --[[add your custom lualine config here]]
-  --     }
-  --   end,
-  -- },
-
-  -- use mini.starter instead of alpha
-  -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  -- { import = "lazyvim.plugins.extras.lang.json" },
-
-  -- add any tools you want to have installed below
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "stylua",
-  --       "shellcheck",
-  --       "shfmt",
-  --       "flake8",
-  --     },
-  --   },
-  -- },
+  {
+    "rcarriga/nvim-notify",
+    enabled = true,
+    opts = {
+      top_down = false
+    },
+  },
 }
