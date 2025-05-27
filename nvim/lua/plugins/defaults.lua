@@ -10,7 +10,15 @@
 -- * override the configuration of LazyVim plugins
 return {
   {
-    "ellisonleao/gruvbox.nvim" ,
+    "williamboman/mason.nvim",
+    opts = {
+      ui = {
+        border = "rounded",
+      },
+    },
+  },
+  {
+    "folke/tokyonight.nvim",
     opts = {
       transparent = true,
       styles = {
@@ -33,7 +41,7 @@ return {
     dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
     -- opts = function(_, opts)
-      -- table.insert(opts.sources, { name = "emoji" })
+    -- table.insert(opts.sources, { name = "emoji" })
     -- end,
     opts = {
       preview = {
@@ -72,9 +80,12 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        -- nushell = {},
       },
+      inlay_hints = {
+        enabled = false
+      }
     },
   },
 
@@ -143,6 +154,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
+        -- "nu",
         "tsx",
         "typescript",
         "sql",
@@ -154,6 +166,49 @@ return {
       })
     end,
   },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup {
+  --       ensure_installed = { "nu" },     -- Ensure the "nu" parser is installed
+  --       highlight = {
+  --         enable = true,                 -- Enable syntax highlighting
+  --       },
+  --       -- OPTIONAL!! These enable ts-specific textobjects.
+  --       -- So you can hit `yaf` to copy the closest function,
+  --       -- `dif` to clear the content of the closest function,
+  --       -- or whatever keys you map to what query.
+  --       textobjects = {
+  --         select = {
+  --           enable = true,
+  --           keymaps = {
+  --             -- You can use the capture groups defined in textobjects.scm
+  --             -- For example:
+  --             -- Nushell only
+  --             ["aP"] = "@pipeline.outer",
+  --             ["iP"] = "@pipeline.inner",
+  --
+  --             -- supported in other languages as well
+  --             ["af"] = "@function.outer",
+  --             ["if"] = "@function.inner",
+  --             ["al"] = "@loop.outer",
+  --             ["il"] = "@loop.inner",
+  --             ["aC"] = "@conditional.outer",
+  --             ["iC"] = "@conditional.inner",
+  --             ["iS"] = "@statement.inner",
+  --             ["aS"] = "@statement.outer",
+  --           },         -- keymaps
+  --         },           -- select
+  --       },             -- textobjects
+  --     }
+  --   end,
+  --   dependencies = {
+  --     -- Install official queries and filetype detection
+  --     -- alternatively, see section "Install official queries only"
+  --     { "nushell/tree-sitter-nu" },
+  --   },
+  --   build = ":TSUpdate",
+  -- },
 
   -- the opts function can also be used to change the default opts:
   {
@@ -162,20 +217,5 @@ return {
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, "😄")
     end,
-  },
-  {
-    "folke/noice.nvim",
-    opts = {
-      notify = {
-        enabled = false,
-      },
-    },
-  },
-  {
-    "rcarriga/nvim-notify",
-    enabled = true,
-    opts = {
-      top_down = false
-    },
   },
 }
