@@ -1,0 +1,101 @@
+{
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "'Iosevka'",
+    "files.autoSave": "off",
+    "editor.fontSize": 16,
+    "debug.console.fontFamily": "'Iosevka'",
+    "terminal.integrated.fontFamily": "'Iosevka'",
+    "terminal.integrated.fontLigatures": true,
+    "terminal.integrated.fontSize": 16,
+    "chat.editor.fontSize": 16,
+    "accessibility.signalOptions.volume": 0,
+    "editor.lineNumbers": "relative",
+    "zenMode.hideLineNumbers": false,
+    "notebook.lineNumbers": "on",
+    "git.openRepositoryInParentFolders": "never",
+    "vim.commandLineModeKeyBindings": [
+        {
+            "before": [
+                "<C-S-Tab>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditor"
+                }
+            ]
+        },
+    ],
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-b>": false,
+        "<C-a>": false,
+        "<C-i>": false,
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.showTabs": "none",
+    "breadcrumbs.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "vim.smartRelativeLine": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.wordWrap": "on",
+    "editor.inlineSuggest.enabled": false,
+    "cursor.chat.terminalShowHoverHint": false,
+    "editor.codeLens": false,
+    "editor.formatOnSave": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollBeyondLastLine": false,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<C-e>"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-q>"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-t>"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+    ],
+    "chat.editor.fontFamily": "Iosevka",
+    "chat.editor.wordWrap": "on",
+    "accessibility.signals.chatRequestSent": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "off"
+    },
+    "keyboard.dispatch": "keyCode",
+    "vim.useCtrlKeys": true,
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.sideBar.location": "right",
+    "window.menuBarVisibility": "compact",
+}
