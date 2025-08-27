@@ -36,6 +36,9 @@ vim.schedule(function()
   require "mappings"
 end)
 
+vim.wo.number = true
+vim.wo.relativenumber = true
+
 -- aerial.nvim
 require("aerial").setup({
   -- optionally use on_attach to set keymaps when aerial has attached to a buffer
@@ -45,6 +48,9 @@ require("aerial").setup({
   end,
 })
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+
+-- leetcode.nvim
+require("leetcode").setup()
 
 -- go-tagger.nvim
 require("go-tagger").setup()
