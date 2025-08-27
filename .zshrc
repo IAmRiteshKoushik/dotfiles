@@ -23,10 +23,10 @@ alias docker='podman'
 alias nv="nvim"
 
 # -- Workspace settings
-alias dev="z ~/ws/dev/ && ls"
-alias dsa="z ~/ws/dsa/ && ls"
-alias ace="z ~/ws/ace/ && ls"
-alias oss="z ~/ws/oss/ && ls"
+alias dev="cd ~/ws/dev/ && ls"
+alias dsa="cd ~/ws/dsa/ && ls"
+alias ace="cd ~/ws/ace/ && ls"
+alias oss="cd ~/ws/oss/ && ls"
 
 # -- Brightness commands
 alias bri="brightnessctl set 100%"
