@@ -11,7 +11,7 @@ export PATH=$PATH:$HOME/go/bin
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +20,7 @@ alias blu="systemctl start bluetooth.service"
 alias noblu="systemctl stop bluetooth.service"
 alias pn="pnpm"
 alias docker='podman'
-alias nv="nvim"
+alias v="nvim"
 
 # -- Workspace settings
 alias dev="cd ~/ws/dev/ && ls"
@@ -46,6 +46,7 @@ alias code="/opt/cursor.appimage $@"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias cr="cargo run"
+alias goi='go mod init github.com/IAmRiteshKoushik/$(basename "$PWD")'
 
 # Mobile development aliases
 alias gr="gradle run"
