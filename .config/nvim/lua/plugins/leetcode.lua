@@ -20,8 +20,8 @@ return {
 
       ---@type lc.storage
       storage = {
-        home = vim.fn.stdpath("data") .. "/.leetcode",
-        cache = vim.fn.stdpath("cache") .. "/.leetcode",
+        home = vim.fn.stdpath "data" .. "/.leetcode",
+        cache = vim.fn.stdpath "cache" .. "/.leetcode",
       },
 
       ---@type table<string, boolean>
@@ -40,7 +40,7 @@ return {
 
       editor = {
         reset_previous_code = true, ---@type boolean
-        fold_imports = true, ---@type boolean
+        fold_imports = false, ---@type boolean
       },
 
       console = {
@@ -100,8 +100,7 @@ return {
       theme = {},
 
       ---@type boolean
-      image_support = false,
-    }
+      image_support = true,
+    },
   },
 }
-

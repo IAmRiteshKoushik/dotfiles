@@ -10,6 +10,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.opt.colorcolumn = "80"
 
 local lazy_config = require "configs.lazy"
 
@@ -36,21 +37,32 @@ vim.schedule(function()
   require "mappings"
 end)
 
-vim.wo.number = true
-vim.wo.relativenumber = true
-
 -- aerial.nvim
-require("aerial").setup({
-  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+require("aerial").setup {
+  layout = {
+    min_width = 30,
+    max_width = 60,
+    win_opts = {
+      number = true,
+      relativenumber = true,
+    },
+  },
   on_attach = function(bufnr)
     vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
     vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
   end,
-})
-vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+}
+-- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+vim.keymap.set("n", "<leader>a", function()
+  require("aerial").toggle()
+  require("aerial").focus()
+end)
 
 -- leetcode.nvim
 require("leetcode").setup()
+
+-- noice.nvim
+-- require("noice").setup()
 
 -- go-tagger.nvim
 require("go-tagger").setup()
