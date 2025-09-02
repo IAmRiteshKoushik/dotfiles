@@ -45,8 +45,15 @@ alias onenv="source ~/venv/bin/activate"
 alias code="/opt/cursor.appimage $@"
 alias lg="lazygit"
 alias ld="lazydocker"
+
+# Rust aliases
 alias cr="cargo run"
+alias ct="cargo test"
+
+# Golang aliases
 alias goi='go mod init github.com/IAmRiteshKoushik/$(basename "$PWD")'
+alias got='go mod tidy'
+alias gor='go run .'
 
 # Mobile development aliases
 alias gr="gradle run"
