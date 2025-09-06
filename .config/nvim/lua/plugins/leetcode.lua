@@ -4,13 +4,14 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
   },
+  lazy = false,
   opts = {
     {
       ---@type string
       arg = "leetcode.nvim",
 
       ---@type lc.lang
-      lang = "java",
+      lang = "Java",
 
       cn = { -- leetcode.cn
         enabled = false, ---@type boolean
