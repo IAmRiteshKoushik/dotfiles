@@ -61,6 +61,8 @@ end)
 -- leetcode.nvim
 require("leetcode").setup()
 
+require("gemini").setup()
+
 -- noice.nvim
 -- require("noice").setup()
 

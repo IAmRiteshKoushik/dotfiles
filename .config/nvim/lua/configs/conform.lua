@@ -5,10 +5,18 @@ local options = {
     html = { "prettier" },
     javascript = { "biome" },
     typescript = { "biome" },
+    go = { "goimports" },
   },
 
-  format_on_save = {
-    timeout_ms = 500,
+  formatters = {
+    golines = {
+      prepend_args = { "--max-len=80" },
+    },
+  },
+
+  format_after_save = {
+    async = true,
+    timeout_ms = 2000,
     lsp_fallback = true,
   },
 }

@@ -7,10 +7,15 @@ local servers = {
   "gopls",
   "jdtls",
   "clangd",
-  "rust-analyzer",
+  "rust_analyzer",
   "zls",
   "ts_ls",
   "emmet_ls",
+  "pyrefly",
+  "prismals",
+  "tinymist",
+  "tailwindcss",
+  "prettierd",
 }
 
 vim.lsp.enable(servers)
