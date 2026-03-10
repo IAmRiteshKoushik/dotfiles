@@ -79,7 +79,7 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
-        bind "Ctrl h" { SwitchToMode "normal"; }
+        // bind "Ctrl h" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
@@ -150,9 +150,9 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Quit; }
     }
-    shared_except "locked" "move" {
-        bind "Ctrl h" { SwitchToMode "move"; }
-    }
+    // shared_except "locked" "move" {
+    //     bind "Ctrl h" { SwitchToMode "move"; }
+    // }
     shared_except "locked" "session" {
         bind "Ctrl o" { SwitchToMode "session"; }
     }
@@ -160,7 +160,7 @@ keybinds clear-defaults=true {
         bind "Ctrl b" { SwitchToMode "tmux"; }
     }
     shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" { SwitchToMode "scroll"; }
+        // bind "Ctrl s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "tab" {
         bind "Ctrl t" { SwitchToMode "tab"; }
@@ -268,7 +268,7 @@ load_plugins {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -283,7 +283,7 @@ theme "tokyonight"
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 // 
-// default_shell "fish"
+default_shell "zsh"
  
 // Choose the path to override cwd that zellij will use for opening new panes
 // 
@@ -318,7 +318,7 @@ theme "tokyonight"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -401,7 +401,7 @@ theme "tokyonight"
 //   - true (default)
 //   - false
 // 
-// session_serialization false
+session_serialization false
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
@@ -449,8 +449,3 @@ theme "tokyonight"
 // Default: true
 // 
 show_startup_tips false
- 
-// Whether to show release notes on first version run
-// Default: true
-// 
-// show_release_notes false
