@@ -5,8 +5,9 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor -d 1:web 2:zellij 3:code 4:api 5:db 6:nil 7:nil 8:nil 9:music 0:misc
 
 bspc config border_width 1
-bspc config window_gap 7
+bspc config window_gap 6
 
+bspc config top_padding 0
 bspc config split_ratio 0.52
 bspc config borderless_monocle true
 bspc config gapless_monocle true
