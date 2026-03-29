@@ -1,6 +1,6 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export JAVA_HOME="/usr/lib/jvm/java-24-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-25-openjdk"
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
