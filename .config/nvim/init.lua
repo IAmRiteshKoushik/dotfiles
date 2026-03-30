@@ -1,6 +1,19 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
+-- Fix double-triggering of Enter, Backspace, and Tab
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        io.stdout:write("\27[>1u")
+    end,
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+    callback = function()
+        io.stdout:write("\27[<1u")
+    end,
+})
+
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
