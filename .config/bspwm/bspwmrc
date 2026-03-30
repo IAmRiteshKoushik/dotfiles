@@ -22,3 +22,6 @@ sxhkd &
 picom --config /home/rk/.config/picom/picom.conf &
 feh --bg-scale /home/rk/Pictures/bg.jpg
 polybar &
+
+xinput set-prop "DELL0A20:00 06CB:CE65 Touchpad" "libinput Tapping Enabled" 1 &
+xinput set-prop "DELL0A20:00 06CB:CE65 Touchpad" "libinput Natural Scrolling Enabled" 1 &
